@@ -32,7 +32,3 @@ export const postData = (query, data) => (dispatch) => {
     }
   })();
 };
-
-export const postSmurf = (data) => {
-  postData('smurfs', data);
-}

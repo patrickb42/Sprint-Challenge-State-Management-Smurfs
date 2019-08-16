@@ -8,7 +8,7 @@ import Smurfs from './Smurfs';
 import { getData } from "../actions";
 const App = ({
   fetchingData,
-  receivingData,
+  receivedData,
   sendingData,
   sentData,
   error,
@@ -17,18 +17,20 @@ const App = ({
 }) => {
   useEffect(() => {
     getData('smurfs');
-  }, []);
+  }, [getData]);
 
   return (
     <div className="App">
-      {<Smurfs smurfs={[]}/>}
+      <SmurfForm />
+      {fetchingData && <p>Loading...</p>}
+      {receivedData && <Smurfs smurfs={smurfs}/>}
     </div>
   );
 }
 
 const mapStateToProps = ({
   fetchingData,
-  receivingData,
+  receivedData,
   sendingData,
   sentData,
   error,
@@ -36,7 +38,7 @@ const mapStateToProps = ({
 }) => {
   return {
     fetchingData,
-    receivingData,
+    receivedData,
     sendingData,
     sentData,
     error,

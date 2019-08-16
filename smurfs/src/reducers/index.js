@@ -31,6 +31,7 @@ export const reducer = (state = initialState, { type, payload }) => {
           message: '',
         },
       };
+
     case FETCH_DATA_SUCCESS:
       console.log(`fetch data success`);
       console.log(payload);
@@ -44,6 +45,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         },
         smurfs: payload,
       };
+
     case FETCH_DATA_FAILURE:
       console.log(`fetch data failure`);
       console.log(payload);
@@ -55,6 +57,7 @@ export const reducer = (state = initialState, { type, payload }) => {
           message: 'error fetching data',
         },
       };
+
     case POST_DATA_START:
       console.log(`post data start`);
       return {
@@ -65,6 +68,7 @@ export const reducer = (state = initialState, { type, payload }) => {
           message: '',
         },
       };
+
     case POST_DATA_SUCCESS:
       console.log(`post data success`);
       console.log(payload);
@@ -75,7 +79,9 @@ export const reducer = (state = initialState, { type, payload }) => {
           status: false,
           message: '',
         },
+        smurfs: payload,
       };
+
     case POST_DATA_FAILURE:
       console.log(`post data failure`);
       console.log(payload);
@@ -87,6 +93,7 @@ export const reducer = (state = initialState, { type, payload }) => {
           message: 'error posting data',
         },
       };
+
     default:
       if (state === initialState) return state;
       else throw new Error(`${type} is not a valid type`);
