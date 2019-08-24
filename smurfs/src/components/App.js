@@ -6,6 +6,7 @@ import "./App.css";
 import SmurfForm from './SmurfForm';
 import Smurfs from './Smurfs';
 import { getData } from "../actions";
+
 const App = ({
   fetchingData,
   receivedData,
